@@ -1,0 +1,212 @@
+@import '../variable';
+@import '/node_modules/tiny-ui/lib/style/mixins';
+@import '/node_modules/tiny-ui/lib/button/style/_mixin.scss';
+
+$btn-prefix: #{$prefix}-btn;
+
+.#{$btn-prefix} {
+  box-sizing: border-box;
+  border: 1px solid #d0d0d5;
+  outline: none;
+  letter-spacing: 0;
+  text-align: center;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50px;
+  vertical-align: middle;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  border-radius: $btn-border-radius;
+  transition: $btn-transition;
+  line-height: $btn-line-height;
+  font-family: "Inter", sans-serif !important; 
+  & + .#{$btn-prefix} {
+    margin-left: 10px;
+  }
+
+  &__loader {
+    @include loader();
+  }
+
+  &__icon-container, &__loader {
+    display: inline-block;
+    pointer-events: none;
+    line-height: $btn-line-height;
+    vertical-align: middle;
+
+    & + span {
+      margin-left: .3em;
+    }
+  }
+
+  &__children {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Types
+  &_default {
+    @include button-style($body-color, $white-color, $gray-400, $white-color, $primary-color, $primary-color,
+        darken($white-color, 7.5%), $primary-color, $primary-color);
+  }
+
+  &_primary {
+    @include button-style($white-color, $primary-color, $primary-color);
+  }
+
+  &_outline {
+    @include button-style($primary-color, $white-color, $primary-color, lighten($primary-color, 40%), lighten($primary-color, 10%), $primary-color,
+        lighten($primary-color, 30%));
+  }
+
+  &_ghost {
+    @include button-style($primary-color, transparent, transparent, lighten($primary-color, 40%), transparent, $primary-color,
+        lighten($primary-color, 30%), transparent, $primary-color);
+
+    &:disabled {
+      border: 0;
+    }
+  }
+
+  &_link {
+    @include button-style($primary-color, transparent, transparent);
+
+    &:hover {
+      text-decoration-line: underline;
+    }
+
+    &:disabled {
+      color: rgba(0, 0, 0, .25);
+      background-color: transparent;
+      border-color: transparent;
+      text-decoration-line: none;
+    }
+  }
+
+  &_info {
+    @include button-style($white-color, $info-color, $info-color);
+  }
+
+  &_success {
+    @include button-style($white-color, $success-color, $success-color);
+  }
+
+  &_warning {
+    @include button-style($white-color, $warning-color, $warning-color);
+  }
+
+  &_danger {
+    @include button-style($white-color, $danger-color, $danger-color);
+  }
+
+  // Sizes
+  &_sm {
+    @include btn-size($btn-padding-sm, $btn-font-size-sm, $btn-height-sm);
+  }
+
+  &_md {
+    @include btn-size($btn-padding-md, $btn-font-size-md, $btn-height-md);
+  }
+
+  &_lg {
+    @include btn-size($btn-padding-lg, $btn-font-size-lg, $btn-height-lg);
+  }
+
+  &_block {
+    width: 100%;
+
+    & + & {
+      margin: 0;
+    }
+  }
+
+  &_round {
+    border-radius: $btn-height-lg;
+  }
+
+  &_loading {
+    position: relative;
+    pointer-events: none;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      left: -1px;
+      z-index: 1;
+      display: block;
+      background: #fff;
+      border-radius: inherit;
+      opacity: $btn-loading-opacity;
+      transition: opacity .2s;
+    }
+  }
+
+  &_disabled {
+    cursor: not-allowed;
+  }
+}
+
+.#{$btn-prefix}-group {
+  display: inline-block;
+
+  & + .#{$btn-prefix}-group {
+    margin-left: 10px;
+  }
+
+  .#{$btn-prefix} {
+    position: relative;
+    border-radius: 0;
+    float: left;
+
+    & + .#{$btn-prefix} {
+      margin-left: -1px;
+    }
+
+    &:hover {
+      z-index: 1;
+    }
+
+    &:first-child {
+      border-top-left-radius: $btn-border-radius;
+      border-bottom-left-radius: $btn-border-radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $btn-border-radius;
+      border-bottom-right-radius: $btn-border-radius;
+    }
+  }
+
+  &_round {
+    .#{$btn-prefix} {
+      &:first-child {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+    }
+  }
+
+  &_primary,
+  &_info,
+  &_success,
+  &_warning,
+  &_danger {
+    .#{$btn-prefix} {
+      &:not(:first-child) {
+        border-left-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}

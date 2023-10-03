@@ -1,0 +1,66 @@
+@import '../variable';
+@import '/node_modules/tiny-ui/lib/alert/style/mixin';
+
+.#{$prefix}-alert {
+  border: 1px solid;
+  border-radius: $alert-border-radius;
+  box-sizing: border-box;
+  padding: 5px 30px 5px 5px;
+  position: relative;
+  font-weight: $font-weight;
+  opacity: 1;
+  font-size: $font-size-base;
+  transition: all 300ms;
+  transform-origin: center top;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+
+  & + & {
+    margin-top: 8px;
+  }
+
+  &__title {
+    box-sizing: border-box;
+    margin: 0 0 5px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__desc {
+    box-sizing: border-box;
+    line-height: 16px;
+  }
+
+  &__icon {
+    line-height: 16px;
+    margin-right: 7px;
+    position: relative;
+    top: 1px;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    cursor: pointer;
+    float: right;
+    user-select: none;
+  }
+
+  &_error {
+    @include alert-mixin($danger-color, $danger-light-color, $danger-lighter-color);
+  }
+
+  &_warning {
+    @include alert-mixin($warning-color, $warning-light-color, $warning-lighter-color);
+  }
+
+  &_success {
+    @include alert-mixin($success-color, $success-light-color, $success-lighter-color);
+  }
+
+  &_info {
+    @include alert-mixin($info-color, $info-light-color, $info-lighter-color);
+  }
+}

@@ -1,0 +1,39 @@
+@import '../../variable';
+
+// use for the `input` tag
+@mixin input-default {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  color: $input-font-color;
+  border: none;
+  transition: all 0.3s;
+  outline: 0;
+  border-radius: $input-border-radius;
+  font-size: $font-size-base;
+
+  box-shadow: -0.5px -0.5px 1px 1px rgb(50 50 71 / 7%), 1px 1px 3px 0 rgb(50 50 71 / 16%) !important;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &:focus {
+    border-color: rgba($primary-color, 0.2);
+    // box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+  }
+
+  &::placeholder {
+    color: #bfbfbf;
+  }
+}
+
+@mixin input-default-disabled {
+  cursor: not-allowed;
+  background-color: #f4f4f5;
+  color: #999;
+
+  &:hover {
+    border-color: #d9d9d9;
+  }
+}
