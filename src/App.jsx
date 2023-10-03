@@ -3,7 +3,7 @@ import { Button } from 'tiny-ui';
 
 import ModalLogin from './Components/ModalLogin'
 import { URL_WS } from './Context/Params'
-
+import img from './assets/Logo_icono.png'
 
 import './Styles/App.scss'
 
@@ -27,7 +27,9 @@ function App(props) {
   return (
     <>
       <URL_WS.Provider value={URL}>
-        <Button btnType="primary" onClick={() => setVisible(true)} size="sm">Primary</Button>
+        <Button onClick={() => setVisible(true)} size="sm">
+          <img src={img} style={{ width: 10 }}/>
+        </Button>
         <ModalLogin 
           visible={visible}
           onCancel={()=>setVisible(false)}

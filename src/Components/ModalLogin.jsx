@@ -21,7 +21,7 @@ function ModalLogin(props) {
 		axios.post(`${URL}/api/login`,{
 			...values
 		}).then(response => {
-			onLogin()
+			onLogin(response.data)
 			onCancel()
 		}).catch(error => {
 			console.log(error.response)
