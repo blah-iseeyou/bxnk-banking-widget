@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'
-import { Modal, Form, Input, InputPassword, Button, Loader, NativeSelect, Row, Col, Typography } from 'tiny-ui';
+import { Modal, Form, Input, InputPassword, Button, Loader, NativeSelect, Row, Col, Typography, Message } from 'tiny-ui';
 import axios from 'axios'
 
 import img from '../assets/BXNKLogo.png'
@@ -24,7 +24,8 @@ function ModalLogin(props) {
 			onLogin(response.data)
 			onCancel()
 		}).catch(error => {
-			console.log(error.response)
+			console.log(error)
+			Message.error('Error al iniciar sesión');
 		}).finally(()=>setLoading(false))
 	}
 
