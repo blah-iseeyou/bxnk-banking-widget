@@ -10,6 +10,9 @@ import './Styles/App.scss'
 
 function App(props) {
 
+  const {
+    onLogin = () => {}
+  } = props
 
   const [URL, setURL] = useState(props?.URL || import.meta.env.VITE_APP_WEB_SERVICE)
   const [visible, setVisible] = useState(false);
@@ -24,10 +27,11 @@ function App(props) {
   return (
     <>
       <URL_WS.Provider value={URL}>
-        <Button btnType="primary" onClick={() => setVisible(true)}>Primary</Button>
+        <Button btnType="primary" onClick={() => setVisible(true)} size="sm">Primary</Button>
         <ModalLogin 
           visible={visible}
           onCancel={()=>setVisible(false)}
+          onLogin={onLogin}
         />
       </URL_WS.Provider>
     </>

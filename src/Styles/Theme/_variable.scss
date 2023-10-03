@@ -1,7 +1,7 @@
 $prefix: 'ty' !default;
 
 // Color
-$primary-color: #121212 !default;
+$primary-color: #beff02 !default;
 
 $white-color: #fff !default;
 $gray-100: #f6f9fc !default;
@@ -63,7 +63,7 @@ $font-family-monospace: lucida console,consolas,monaco,andale mono,ubuntu mono,m
 $font-family: $font-family-sans-serif !default;
 
 $height-sm: 24px !default;
-$height-md: 32px !default;
+$height-md: 54px !default;
 $height-lg: 42px !default;
 
 $line-height-base: 1.5 !default;
@@ -172,7 +172,7 @@ $card-footer-padding: 5px 16px 16px !default;
 $divider-line-color: #e4e4e4 !default;
 
 // Input
-$input-font-color: $font-color !default;
+$input-font-color: #d5d5d5 !default;
 $input-border-radius: 5px !default;
 $input-sm-padding: 0 4px !default;
 $input-sm-height: $height-sm !default;

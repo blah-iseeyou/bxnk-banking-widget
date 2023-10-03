@@ -51,9 +51,10 @@
 // @import "/node_modules/tiny-ui/lib/menu/style/index";
 // @import "/node_modules/tiny-ui/lib/message/style/index";
 @import "/node_modules/tiny-ui/lib/modal/style/index";
+@import "./Theme/components/modal.scss";
 
 // @import "/node_modules/tiny-ui/lib/notification/style/index";
-// @import "/node_modules/tiny-ui/lib/overlay/style/index";
+@import "/node_modules/tiny-ui/lib/overlay/style/index";
 // @import "/node_modules/tiny-ui/lib/pagination/style/index";
 // @import "/node_modules/tiny-ui/lib/pop-confirm/style/index";
 // @import "/node_modules/tiny-ui/lib/popover/style/index";
