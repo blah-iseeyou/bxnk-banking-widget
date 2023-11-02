@@ -5045,7 +5045,7 @@ function pl(e) {
       Or,
       {
         onClick: () => {
-          console.log("ddddddddddddd"), a();
+          console.log("ddddddddddddd"), alert("55"), a();
         },
         size: "sm",
         children: /* @__PURE__ */ Ie.jsx("img", { src: gl, style: { width: 10 } })

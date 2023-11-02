@@ -39,6 +39,7 @@ function App(props) {
         <Button 
           onClick={() =>{ 
             console.log("ddddddddddddd")
+            alert("55")
             onClick()}} 
           size="sm"
         >
