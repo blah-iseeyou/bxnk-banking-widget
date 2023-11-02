@@ -13,7 +13,8 @@ function App(props) {
   let {
     onLogin = () => {},
     loading = false,
-    open
+    open,
+    onClick = () => {},
   } = props
 
   const [URL, setURL] = useState(props?.URL || import.meta.env.VITE_APP_WEB_SERVICE)
@@ -36,7 +37,7 @@ function App(props) {
     <>
       <URL_WS.Provider value={URL}>
         <Button 
-          //onClick={() => setVisible(true)} 
+          onClick={() => onClick()} 
           size="sm"
         >
           <img src={img} style={{ width: 10 }}/>

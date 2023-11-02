@@ -5031,17 +5031,20 @@ function pl(e) {
     onLogin: t = () => {
     },
     loading: r = !1,
-    open: n
+    open: n,
+    onClick: a = () => {
+    }
   } = e;
-  const [a, i] = ue((e == null ? void 0 : e.URL) || "http://localhost:4000"), [l, o] = ue(!1);
+  const [i, l] = ue((e == null ? void 0 : e.URL) || "http://localhost:4000"), [o, s] = ue(!1);
   return be(() => {
-    (e == null ? void 0 : e.URL) !== a && (e != null && e.URL) && i(e == null ? void 0 : e.URL);
+    (e == null ? void 0 : e.URL) !== i && (e != null && e.URL) && l(e == null ? void 0 : e.URL);
   }), be(() => {
-    o(n);
-  }, [n]), /* @__PURE__ */ Ie.jsx(Ie.Fragment, { children: /* @__PURE__ */ Ie.jsxs(_a.Provider, { value: a, children: [
+    s(n);
+  }, [n]), /* @__PURE__ */ Ie.jsx(Ie.Fragment, { children: /* @__PURE__ */ Ie.jsxs(_a.Provider, { value: i, children: [
     /* @__PURE__ */ Ie.jsx(
       Or,
       {
+        onClick: () => a(),
         size: "sm",
         children: /* @__PURE__ */ Ie.jsx("img", { src: gl, style: { width: 10 } })
       }
@@ -5049,7 +5052,7 @@ function pl(e) {
     /* @__PURE__ */ Ie.jsx(
       ml,
       {
-        visible: l,
+        visible: o,
         onLogin: t,
         loading: r
       }
