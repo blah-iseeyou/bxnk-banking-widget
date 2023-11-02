@@ -50,7 +50,7 @@ function ModalLogin(props) {
 					<Text style={{ fontSize: '38px', fontWeight: '600' }}> Iniciar Sesión </Text>
 				</Col>
 			</Row>
-			<Loader loading={loading} style={{width: "100%"}}>
+			<Loader loading={load} style={{width: "100%"}}>
 				<Row justify="center">
 					<Col span={20}>
 						<Form
