@@ -5031,22 +5031,17 @@ function pl(e) {
     onLogin: t = () => {
     },
     loading: r = !1,
-    open: n,
-    onClick: a = () => {
-    }
+    open: n
   } = e;
-  const [i, l] = ue((e == null ? void 0 : e.URL) || "http://localhost:4000"), [o, s] = ue(!1);
+  const [a, i] = ue((e == null ? void 0 : e.URL) || "http://localhost:4000"), [l, o] = ue(!1);
   return be(() => {
-    (e == null ? void 0 : e.URL) !== i && (e != null && e.URL) && l(e == null ? void 0 : e.URL);
+    (e == null ? void 0 : e.URL) !== a && (e != null && e.URL) && i(e == null ? void 0 : e.URL);
   }), be(() => {
-    s(n);
-  }, [n]), /* @__PURE__ */ Ie.jsx(Ie.Fragment, { children: /* @__PURE__ */ Ie.jsxs(_a.Provider, { value: i, children: [
+  }, [n]), /* @__PURE__ */ Ie.jsx(Ie.Fragment, { children: /* @__PURE__ */ Ie.jsxs(_a.Provider, { value: a, children: [
     /* @__PURE__ */ Ie.jsx(
       Or,
       {
-        onClick: () => {
-          console.log("ddddddddddddd"), alert("55"), a();
-        },
+        onClick: () => o(!0),
         size: "sm",
         children: /* @__PURE__ */ Ie.jsx("img", { src: gl, style: { width: 10 } })
       }
@@ -5054,7 +5049,8 @@ function pl(e) {
     /* @__PURE__ */ Ie.jsx(
       ml,
       {
-        visible: o,
+        visible: l,
+        onCancel: () => o(!1),
         onLogin: t,
         loading: r
       }

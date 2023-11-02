@@ -13,8 +13,7 @@ function App(props) {
   let {
     onLogin = () => {},
     loading = false,
-    open,
-    onClick = () => {},
+    open
   } = props
 
   const [URL, setURL] = useState(props?.URL || import.meta.env.VITE_APP_WEB_SERVICE)
@@ -29,7 +28,7 @@ function App(props) {
 
   useEffect(() => {
 
-    setVisible(open)
+    
 
   },[open])
 
@@ -37,17 +36,14 @@ function App(props) {
     <>
       <URL_WS.Provider value={URL}>
         <Button 
-          onClick={() =>{ 
-            console.log("ddddddddddddd")
-            alert("55")
-            onClick()}} 
+          onClick={() => setVisible(true)} 
           size="sm"
         >
           <img src={img} style={{ width: 10 }}/>
         </Button>
         <ModalLogin 
           visible={visible}
-          //onCancel={()=>setVisible(false)}
+          onCancel={()=>setVisible(false)}
           onLogin={onLogin}
           loading={loading}
         />
