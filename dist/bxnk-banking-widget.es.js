@@ -5044,7 +5044,9 @@ function pl(e) {
     /* @__PURE__ */ Ie.jsx(
       Or,
       {
-        onClick: () => a(),
+        onClick: () => {
+          console.log("ddddddddddddd"), a();
+        },
         size: "sm",
         children: /* @__PURE__ */ Ie.jsx("img", { src: gl, style: { width: 10 } })
       }

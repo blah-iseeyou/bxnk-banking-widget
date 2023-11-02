@@ -37,7 +37,9 @@ function App(props) {
     <>
       <URL_WS.Provider value={URL}>
         <Button 
-          onClick={() => onClick()} 
+          onClick={() =>{ 
+            console.log("ddddddddddddd")
+            onClick()}} 
           size="sm"
         >
           <img src={img} style={{ width: 10 }}/>
