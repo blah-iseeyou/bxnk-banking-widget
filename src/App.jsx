@@ -10,10 +10,9 @@ import './Styles/App.scss'
 
 function App(props) {
 
-  let {
+  const {
     onLogin = () => {},
-    loading = false,
-    open
+    loading = false
   } = props
 
   const [URL, setURL] = useState(props?.URL || import.meta.env.VITE_APP_WEB_SERVICE)
@@ -26,19 +25,10 @@ function App(props) {
 
   })
 
-  useEffect(() => {
-
-    
-
-  },[open])
-
   return (
     <>
       <URL_WS.Provider value={URL}>
-        <Button 
-          onClick={() => setVisible(true)} 
-          size="sm"
-        >
+        <Button onClick={() => setVisible(true)} size="sm">
           <img src={img} style={{ width: 10 }}/>
         </Button>
         <ModalLogin 
