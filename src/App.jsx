@@ -11,7 +11,8 @@ import './Styles/App.scss'
 function App(props) {
 
   const {
-    onLogin = () => {}
+    onLogin = () => {},
+    loading = false
   } = props
 
   const [URL, setURL] = useState(props?.URL || import.meta.env.VITE_APP_WEB_SERVICE)
@@ -34,6 +35,7 @@ function App(props) {
           visible={visible}
           onCancel={()=>setVisible(false)}
           onLogin={onLogin}
+          loading={loading}
         />
       </URL_WS.Provider>
     </>

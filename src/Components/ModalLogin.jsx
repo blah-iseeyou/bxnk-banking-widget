@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Modal, Form, Input, InputPassword, Button, Loader, NativeSelect, Row, Col, Typography, Message } from 'tiny-ui';
 import axios from 'axios'
 
@@ -10,15 +10,15 @@ const { Text } = Typography;
 
 function ModalLogin(props) {
 
-	let { visible, onCancel, URL, onLogin } = props;
+	let { visible, onCancel, URL, onLogin, loading } = props;
 
-	let [loading, setLoading] = useState(false)
+	let [load, setLoading] = useState(false)
 	let [token, setToken] = useState(null)
 	let [cuentas, setCuentas] = useState([])
 
 	const onFinish = (values) => {
-		setLoading(true)
-		axios.post(`${URL}/api/login`,{
+		onLogin(values)
+		/*axios.post(`${URL}/api/login`,{
 			...values
 		}).then(response => {
 			onLogin(response.data)
@@ -26,8 +26,12 @@ function ModalLogin(props) {
 		}).catch(error => {
 			console.log(error)
 			Message.error('Error al iniciar sesión');
-		}).finally(()=>setLoading(false))
+		})*/
 	}
+
+	useEffect(() => {
+		setLoading(loading)
+  	},[loading])
 
 	return (
 		<Modal
