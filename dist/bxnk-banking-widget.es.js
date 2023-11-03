@@ -5033,19 +5033,21 @@ function pl(e) {
     loading: r = !1,
     onClick: n = () => {
     },
-    open: a = !1
-  } = e, [i, l] = ue((e == null ? void 0 : e.URL) || "http://localhost:4000"), [o, s] = ue(!1);
+    onCancel: a = () => {
+    },
+    open: i = !1
+  } = e, [l, o] = ue((e == null ? void 0 : e.URL) || "http://localhost:4000"), [s, d] = ue(!1);
   return be(() => {
-    (e == null ? void 0 : e.URL) !== i && (e != null && e.URL) && l(e == null ? void 0 : e.URL);
+    (e == null ? void 0 : e.URL) !== l && (e != null && e.URL) && o(e == null ? void 0 : e.URL);
   }), be(() => {
-    s(a);
-  }, [a]), /* @__PURE__ */ Ie.jsx(Ie.Fragment, { children: /* @__PURE__ */ Ie.jsxs(_a.Provider, { value: i, children: [
+    d(i);
+  }, [i]), /* @__PURE__ */ Ie.jsx(Ie.Fragment, { children: /* @__PURE__ */ Ie.jsxs(_a.Provider, { value: l, children: [
     /* @__PURE__ */ Ie.jsx(Or, { onClick: () => n(), size: "sm", children: /* @__PURE__ */ Ie.jsx("img", { src: gl, style: { width: 10 } }) }),
     /* @__PURE__ */ Ie.jsx(
       ml,
       {
-        visible: o,
-        onCancel: () => s(!1),
+        visible: s,
+        onCancel: () => a(),
         onLogin: t,
         loading: r
       }

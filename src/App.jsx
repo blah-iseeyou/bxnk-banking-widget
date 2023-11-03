@@ -14,6 +14,7 @@ function App(props) {
     onLogin = () => {},
     loading = false,
     onClick = () => {},
+    onCancel = () => {},
     open = false
   } = props
 
@@ -41,7 +42,7 @@ function App(props) {
         </Button>
         <ModalLogin 
           visible={visible}
-          onCancel={()=>setVisible(false)}
+          onCancel={()=>onCancel()}
           onLogin={onLogin}
           loading={loading}
         />
