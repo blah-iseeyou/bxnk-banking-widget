@@ -48,14 +48,14 @@ function ModalLogin(props) {
 			{auth_2FA ? <Loader loading={load} style={{width: "100%"}}>		
 					<Row align="center">
 	                    <Col xs={22} lg={20} className="center ">
-	                        {qrcode ? <Paragraph align="justify">
+	                        {qrcode ? <p align="justify">
 	                            Para mejorar la seguridad de tu cuenta, es necesario instalar una aplicación como Google Authenticator.
 	                            Esta app generará códigos únicos que deberás introducir cada vez que inicies sesión.
 	                            Para configurarla, solo necesitarás escanear el código QR que aparece a continucación con la cámara de tu teléfono.
 	                            De esta manera, podrás proteger tus datos personales y evitar accesos no autorizados a tu cuenta.
-	                        </Paragraph> : <Paragraph align="justify">
+	                        </p> : <p align="justify">
 	                            Por favor, ingresa el código generado por Google Authenticator en el siguiente para continuar
-	                        </Paragraph>}
+	                        </p>}
 	                    </Col>
 	                    <Col xs={22} lg={20} className="center ">
 	                        {qrcode ? <img src={qrcode} /> : null}

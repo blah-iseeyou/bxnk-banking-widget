@@ -1,7 +1,7 @@
 {
   "name": "stp-widget",
   "private": true,
-  "version": "0.0.11",
+  "version": "0.0.12",
   "type": "module",
   "main": "./dist/bxnk-banking-widget.cjs.js",
   "module": "./dist/bxnk-banking-widget.esm.js",
