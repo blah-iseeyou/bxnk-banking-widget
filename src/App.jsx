@@ -15,7 +15,9 @@ function App(props) {
     loading = false,
     onClick = () => {},
     onCancel = () => {},
-    open = false
+    open = false,
+    qrcode = undefined,
+    auth_2FA = false,
   } = props
 
   const [URL, setURL] = useState(props?.URL || import.meta.env.VITE_APP_WEB_SERVICE)
@@ -45,6 +47,8 @@ function App(props) {
           onCancel={()=>onCancel()}
           onLogin={onLogin}
           loading={loading}
+          qrcode={qrcode}
+          auth_2FA={auth_2FA}
         />
       </URL_WS.Provider>
     </>
